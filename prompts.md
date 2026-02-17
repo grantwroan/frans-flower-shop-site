@@ -1,4 +1,4 @@
-# Learning Prompts (for ChatGPT)
+# Prompts (for improving)
 
 ## Colors
 
