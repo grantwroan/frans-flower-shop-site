@@ -1,92 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fran's Flowers | Boutique Flower Shop in San Francisco</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fran's Flowers | Boutique Flower Shop in San Francisco</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-  <body>
-    <header>
-      <div class="header-content">
-        <h1><span class="accent">Fran's</span> Flowers</h1>
-        <p class="tagline">Brightening San Francisco since 1995</p>
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-logo">
+        <a href="index.html" aria-label="Fran's Flowers Home">Fran's Flowers</a>
       </div>
-    </header>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#specials">Specials</a></li>
+        <li><a href="#seasonal">Seasonal Picks</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+        <li><a href="about.html">About Fran</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div id="hero-container">
-      <img
-        src="img/fran.png"
-        alt="Francine Miller, owner of Fran's Flowers"
-        class="hero-img"
-      />
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero banner">
+    <div class="hero-content">
+      <h1>Fran's Flowers</h1>
+      <p class="tagline">Brightening San Francisco since 1995</p>
+      <a href="#specials" class="btn-primary">Shop Specials</a>
     </div>
+  </section>
 
-    <main>
-      <section class="about-us">
-        <h2><span class="accent">About</span> Us</h2>
-        <p>
-          Fran's Flowers was founded in 1995 by Francine Miller to share joy,
-          beauty, and connection with the Mission District of San Francisco.
-          Thirty years later we remain rooted in that vision, brightening lives
-          with every bouquet while supporting our community. Ten percent of each
-          sale continues to fund efforts to fight homelessness across the Bay
-          Area.
-        </p>
-        <p>Thank you for helping us grow kindness one flower at a time.</p>
-      </section>
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Fran's Flowers was founded in 1995 by Francine Miller to share joy, beauty, and connection with the Mission District of San Francisco. Thirty years later, we remain rooted in that vision, brightening lives with every bouquet while supporting our community. Ten percent of each sale continues to fund efforts to fight homelessness across the Bay Area.</p>
+      <p>Thank you for helping us grow kindness one flower at a time.</p>
+    </div>
+  </section>
 
-      <section class="specials">
-        <h2><span class="accent">Weekly</span> Specials</h2>
-        <div class="specials-list">
-          <article class="special-offer">
-            <img src="img/potted_plant.png" alt="Ceramic Potted Herbs" />
-            <h3>Ceramic Potted Herbs</h3>
-            <p class="price-now">$7.99</p>
-            <p class="price-was">Was $17.99</p>
-          </article>
-
-          <article class="special-offer">
-            <img src="img/wild_flowers.png" alt="Wildflower Explosion" />
-            <h3>Wildflower Explosion</h3>
-            <p class="price-now">$19.99</p>
-            <p class="price-was">Was $29.99</p>
-          </article>
-
-          <article class="special-offer">
-            <img src="img/sunflowers.png" alt="Sunflower Delight" />
-            <h3>Sunflower Delight</h3>
-            <p class="price-now">$12.99</p>
-            <p class="price-was">Was $19.99</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="visit-us">
-        <h2><span class="accent">Visit</span> Us</h2>
-        <div class="contact-info">
-          <p>Come in and say hi!</p>
-          <div class="address-block">
-            <address>123 Valencia Street, San Francisco, CA 94103</address>
-          </div>
-          <div class="phone-block">
-            <p>Call us at <a href="tel:+1234567890">123-456-7890</a></p>
-          </div>
-        </div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.144965296929!2d-122.4230293!3d37.7689366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3a37128e21%3A0xf85bfc7fef295b98!2s123%20Valencia%20St%2C%20San%20Francisco%2C%20CA%2094103!5e0!3m2!1sen!2sus!4v1722345678901!5m2!1sen!2sus"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2026 Fran's Flowers LLC.</p>
-        <p>Brightening lives one flower at a time</p>
+  <!-- SPECIALS -->
+  <section id="specials" class="specials-section">
+    <div class="container">
+      <h2>This Week's Specials</h2>
+      <div class="specials-grid">
+        <article class="special-card">
+          <img src="img/potted_plant.png" alt="Ceramic potted herbs arrangement" />
+          <h3>Ceramic Potted Herbs</h3>
+          <p>A delightful set of fresh potted herbs — perfect for the kitchen or gifting.</p>
+          <p class="price-now">$7.99</p>
+          <p class="price-was">Was $17.99</p>
+        </article>
+        <article class="special-card">
+          <img src="img/wild_flowers.png" alt="Wildflower explosion bouquet" />
+          <h3>Wildflower Explosion</h3>
+          <p>A vibrant, rustic mix of seasonal wildflowers — unique every week, always beautiful.</p>
+          <p class="price-now">$19.99</p>
+          <p class="price-was">Was $29.99</p>
+        </article>
+        <article class="special-card">
+          <img src="img/sunflowers.png" alt="Sunflower delight bouquet" />
+          <h3>Sunflower Delight</h3>
+          <p>A cheerful arrangement of fresh sunflowers, perfect for brightening any room.</p>
+          <p class="price-now">$12.99</p>
+          <p class="price-was">Was $19.99</p>
+        </article>
       </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+
+  <!-- SEASONAL PICKS -->
+  <section id="seasonal" class="seasonal-section">
+    <div class="container">
+      <h2>Seasonal Picks</h2>
+      <div class="seasonal-card">
+        <img src="img/fran.png" alt="Fran holding a vibrant summer dahlia bouquet in warm tones" />
+        <div class="seasonal-info">
+          <h3>Summer Dahlia Burst</h3>
+          <p>Bold dahlias in warm oranges, pinks, and reds — the season's showstopper arrangement. Dahlias are hand-selected daily from our local growers and arranged fresh each morning.</p>
+          <p class="seasonal-tag">&#x2600;&#xFE0F; Best for birthdays &amp; celebrations — only here 'til September!</p>
+          <p class="price-now">$42.99</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <blockquote>
+            <p>"Fran's Flowers has been our go-to for every special occasion for over ten years. The arrangements are always stunning and so thoughtfully made. Nothing beats walking in and being greeted by that incredible scent!"</p>
+          </blockquote>
+          <footer class="testimonial-author">
+            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <cite>— Maria G., Mission District</cite>
+          </footer>
+        </article>
+        <article class="testimonial-card">
+          <blockquote>
+            <p>"I ordered a last-minute birthday bouquet and Fran's pulled it off beautifully. The sunflowers were so fresh they lasted two full weeks! I won't go anywhere else for flowers in the city."</p>
+          </blockquote>
+          <footer class="testimonial-author">
+            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <cite>— James T., Noe Valley</cite>
+          </footer>
+        </article>
+        <article class="testimonial-card">
+          <blockquote>
+            <p>"As a wedding planner, I've worked with dozens of florists. Fran's is in a class of their own — creative, reliable, and genuinely passionate. My clients always rave about the flowers."</p>
+          </blockquote>
+          <footer class="testimonial-author">
+            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <cite>— Sofia R., Bay Area Wedding Co.</cite>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT US -->
+  <section id="visit" class="visit-section">
+    <div class="container">
+      <h2>Visit Us</h2>
+      <div class="visit-grid">
+        <div class="visit-info">
+          <h3>Location</h3>
+          <address>123 Valencia Street<br />San Francisco, CA 94103</address>
+          <h3>Hours</h3>
+          <ul>
+            <li>Monday–Friday: 8am – 7pm</li>
+            <li>Saturday: 9am – 6pm</li>
+            <li>Sunday: 10am – 4pm</li>
+          </ul>
+          <h3>Contact</h3>
+          <p><a href="tel:+11234567890">(123) 456-7890</a></p>
+          <p><a href="mailto:hello@fransflowers.com">hello@fransflowers.com</a></p>
+        </div>
+        <div class="visit-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.144965296929!2d-122.4230293!3d37.7689366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3a37128e21%3A0xf85bfc7fef295b98!2s123%20Valencia%20St%2C%20San%20Francisco%2C%20CA%2094103!5e0!3m2!1sen!2sus!4v1722345678901!5m2!1sen!2sus"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map showing Fran's Flowers location at 123 Valencia Street San Francisco"
+            aria-label="Google Maps showing Fran's Flowers location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">Fran's Flowers</p>
+        <p class="footer-tagline">Brightening San Francisco since 1995</p>
+        <p class="footer-copy">&copy; 2026 Fran's Flowers LLC. All rights reserved.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#seasonal">Seasonal Picks</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+          <li><a href="about.html">About Fran</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons" role="list">
+          <a href="#" class="social-icon" aria-label="Follow us on Instagram" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            Instagram
+          </a>
+          <a href="#" class="social-icon" aria-label="Follow us on Facebook" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="#" class="social-icon" aria-label="Follow us on Pinterest" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.87-2.61 1.94-2.61.92 0 1.36.69 1.36 1.52 0 .93-.59 2.32-.9 3.6-.25 1.07.53 1.94 1.58 1.94 1.9 0 3.36-2 3.36-4.9 0-2.56-1.84-4.35-4.47-4.35-3.04 0-4.82 2.28-4.82 4.63 0 .92.35 1.9.79 2.43.09.11.1.2.07.31-.08.33-.26 1.07-.3 1.22-.05.19-.16.23-.38.14-1.39-.65-2.26-2.68-2.26-4.32 0-3.51 2.55-6.74 7.36-6.74 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.41 6.9-5.76 6.9-1.13 0-2.19-.59-2.55-1.28l-.69 2.59c-.25.97-.93 2.18-1.38 2.92C11.15 21.95 11.57 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            Pinterest
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
 </html>
