@@ -1,33 +1,668 @@
-/* Base Styles */
+/* ===========================
+   Fran's Flowers — style.css
+   LevelUp: Beautify a Website
+   =========================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #c0392b;
+  --color-primary-light: #e74c3c;
+  --color-accent: #f39c12;
+  --color-green: #27ae60;
+  --color-dark: #2c3e50;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-bg: #fdf9f4;
+  --color-bg-alt: #fff8f0;
+  --color-white: #ffffff;
+  --color-border: #e8ddd0;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', Arial, sans-serif;
+  --shadow: 0 4px 16px rgba(0,0,0,0.10);
+  --radius: 8px;
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: royalblue;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-  background-color: bisque;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-/* Typography */
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
 
-/* Links & Accents */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
 
-/* Images */
+a:hover, a:focus {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
 
-/* Hero Section */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
 
-/* Main Content */
+address { font-style: normal; }
 
-/* About Section */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-/* Specials Section */
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  letter-spacing: 0.5px;
+  transition: background-color var(--transition), transform var(--transition);
+  text-decoration: none;
+}
 
-/* Visit Us Section */
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
 
-iframe {
+/* ========================
+   NAVIGATION
+   ======================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nav-logo a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color var(--transition);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.hamburger {
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-dark);
+  border-radius: 2px;
+  display: block;
+  transition: background-color var(--transition);
+}
+
+/* ========================
+   HERO
+   ======================== */
+.hero {
+  background: linear-gradient(135deg, rgba(192,57,43,0.82) 0%, rgba(44,62,80,0.80) 100%),
+              url('img/fran.png') center/cover no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.hero-content .tagline {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* ========================
+   ABOUT
+   ======================== */
+.about-section {
+  padding: 5rem 0;
+  background-color: var(--color-bg-alt);
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+}
+
+/* ========================
+   SPECIALS
+   ======================== */
+.specials-section {
+  padding: 5rem 0;
+  background-color: var(--color-bg);
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.special-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.special-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+}
+
+.special-card img {
   width: 100%;
-  height: 350px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
 }
 
-/* Footer */
-footer {
-  margin-top: 48px;
+.special-card h3,
+.special-card p {
+  padding: 0 1.25rem;
+}
+
+.special-card h3 { padding-top: 1rem; }
+.special-card p { color: var(--color-text-light); }
+
+.price-now {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-primary) !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.price-was {
+  text-decoration: line-through;
+  color: var(--color-text-light) !important;
+  font-size: 0.9rem;
+}
+
+/* ========================
+   SEASONAL PICKS
+   ======================== */
+.seasonal-section {
+  padding: 5rem 0;
+  background-color: #fff8ee;
+}
+
+.seasonal-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.seasonal-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.seasonal-info {
+  padding: 2rem;
+}
+
+.seasonal-info h3 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.seasonal-info p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.seasonal-tag {
+  background-color: #fff3cd;
+  border-left: 4px solid var(--color-accent);
+  padding: 0.75rem 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-weight: 700;
+  color: var(--color-dark) !important;
+  font-size: 0.95rem;
+  display: block;
+}
+
+/* ========================
+   TESTIMONIALS
+   ======================== */
+.testimonials-section {
+  padding: 5rem 0;
+  background-color: var(--color-bg-alt);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid var(--color-primary);
+}
+
+.testimonial-card blockquote p {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stars {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+cite {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  font-style: normal;
+}
+
+/* ========================
+   VISIT US
+   ======================== */
+.visit-section {
+  padding: 5rem 0;
+  background-color: var(--color-bg);
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.visit-info h3 {
+  color: var(--color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.visit-info h3:first-child { margin-top: 0; }
+
+.visit-info ul {
+  list-style: none;
+  padding: 0;
+  color: var(--color-text-light);
+}
+
+.visit-info li { margin-bottom: 0.2rem; }
+
+.visit-map iframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: var(--radius);
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+.site-footer {
+  background-color: var(--color-dark);
+  color: rgba(255,255,255,0.85);
+  padding: 3.5rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-nav h4,
+.footer-social h4 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li { margin-bottom: 0.5rem; }
+
+.footer-nav a {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* ========================
+   ABOUT PAGE
+   ======================== */
+.about-page-hero {
+  background: linear-gradient(135deg, rgba(39,174,96,0.88) 0%, rgba(44,62,80,0.85) 100%),
+              url('img/fran.png') center/cover no-repeat;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.about-page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.about-page-hero p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.88);
+}
+
+.about-fran-section {
+  padding: 5rem 0;
+  background-color: var(--color-bg-alt);
+}
+
+.about-fran-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-fran-image img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-fran-text h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-fran-text p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.values-section {
+  padding: 5rem 0;
+  background-color: var(--color-bg);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.value-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--color-green);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 { margin-bottom: 0.75rem; }
+
+.value-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* ========================
+   RESPONSIVE — TABLET
+   ======================== */
+@media (max-width: 900px) {
+  .specials-grid,
+  .testimonials-grid,
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .seasonal-card,
+  .about-fran-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seasonal-card img,
+  .about-fran-image img {
+    height: 280px;
+  }
+
+  .about-fran-text h2 { text-align: center; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================
+   RESPONSIVE — MOBILE
+   ======================== */
+@media (max-width: 600px) {
+  h2 { font-size: 1.6rem; }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    padding: 1rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .specials-grid,
+  .testimonials-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
